@@ -1,0 +1,274 @@
+// Tasnova Tabassum Apsara_2011446642 and Jannatul Ferdous_1813660642
+
+
+//Name : USER
+//Password : 12345
+
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+
+
+
+
+class Login extends registration{
+    private JLabel l,label,label2,label3,label4,lt,lt2;
+    private Container c;
+    private ImageIcon ic,i,im;
+    private Font f;
+    private JTextField t;
+    private JPasswordField p;
+    private JButton log;
+   
+    private JTable table,table2,table3,table4;
+    private String[] col = {"From","To","Price","Time"};
+    private String[][] row = { { "Dhaka", "Tangail", "2025", "16:30" }, { "Dhaka", "Ishwardi", "2225", "19:00" }, { "Dhaka", "Jashore", "2425", "08:30" }, { "Dhaka", "Cox's Bazar", "3500", "09:50" }, { "Dhaka", "Comilla", "2525", "11:00" }, { "Dhaka", "Tajgaon", "2000", "05:30" }, { "Dhaka", "Noakhali", "2059", "05:30" }, { "Dhaka", "Barishal", "2725", "12:00" }, { "Dhaka", "Lalmonirhat", "2600", "19:00" } };
+    private JScrollPane scroll;
+    private String[]col2 = {"From","To","Price","Time"};
+    private String[][]row2 = { { "Dhaka", "Tangail", "5000", "16:30" }, { "Dhaka", "Ishwardi", "5365", "19:00" }, { "Dhaka", "Jashore", "5567", "08:30" }, { "Dhaka", "Cox's Bazar", "6500", "09:50" }, { "Dhaka", "Comilla", "5560", "11:00" }, { "Dhaka", "Tajgaon", "5600", "05:30" }, { "Dhaka", "Noakhali", "5025", "05:30" }, { "Dhaka", "Barishal", "5225", "12:00" }, { "Dhaka", "Lalmonirhat", "5725", "19:00" } };
+    private String[] col3 = {"From","To","Price","Time"};
+    private String[][]row3 = { { "Dhaka", "Bali", "21485", "06:20" }, { "Dhaka", "Bangkok", "22000", "20:45" }, { "Dhaka", "Cairo", "27975", "10:25" }, { "Dhaka", "CapeTown", "42500", "16:45" }, { "Dhaka", "Chicago", "35000", "06:30" }, { "Dhaka", "Dubai", "39000", "08:15" }, { "Dhaka", "Frankfurt", "20500", "06:50" }, { "Dhaka", "HongKong", "20845", "12:00" }, { "Dhaka", "Istanbul", "22000", "10:45" }, { "Dhaka", "London", "30600", "14:35" }, { "Dhaka", "LosAngeles", "35000", "22:00" }, { "Dhaka", "Melbourne", "27800", "21:15" }, { "Dhaka", "New York", "32000", "08:50" }, { "Dhaka", "Paris", "18500", "18:45" }, { "Dhaka", "Rome", "19900", "20:00"}, { "Dhaka", "SanFrancisco", "35000", "12:00"}, { "Dhaka", "Shanghai", "24430", "10:15" }, { "Dhaka", "Singapore", "15000", "21:10" }, { "Dhaka", "Sydney", "27800", "12:00"}, { "Dhaka", "Toronto", "35000", "17:00 " } };
+    private String[]col4 = {"From","To","Price","Time"};
+    private String[][]row4 = { { "Dhaka", "Bali", "64455", "06:20" }, { "Dhaka", "Bangkok", "27000", "20:45" }, { "Dhaka", "Cairo", "68925", "10:25" }, { "Dhaka", "CapeTown", "37500", "16:45" }, { "Dhaka", "Chicago", "105000", "06:30" }, { "Dhaka", "Dubai", "36000", "08:15" }, { "Dhaka", "Frankfurt", "55500", "06:50" }, { "Dhaka", "HongKong", "62535", "12:00" }, { "Dhaka", "Istanbul", "66000", "10:45" }, { "Dhaka", "London", "67800", "14:35" }, { "Dhaka", "LosAngeles", "105000", "22:00" }, { "Dhaka", "Melbourne", "83400", "21:15" }, { "Dhaka", "New York", "96000", "08:50" }, { "Dhaka", "Paris", "55500", "18:45" }, { "Dhaka", "Rome", "59700", "20:00" }, { "Dhaka", "SanFrancisco", "105000", "12:00" }, { "Dhaka", "Shanghai", "73290", "10:15" }, { "Dhaka", "Singapore", "27000", "21:10"}, { "Dhaka", "Sydney", "83400", "12:00"}, { "Dhaka", "Toronto", "105000", "17:00" } };
+    private Cursor curs;
+   
+    
+    
+     public Login()
+     {
+        c = this.getContentPane();
+        c.setLayout(null);
+        c.setBackground(Color.WHITE);
+        this.setBounds(0,0,1400,800);
+        this.setTitle("Airline Reservation System _ Login");
+        this.setResizable(true);
+        
+        iconImage();
+        backgroundImage();
+        components();
+        button();
+        table();
+        
+     }
+    
+     
+     
+     
+     
+      public void iconImage()
+    {
+       
+        
+        ic = new ImageIcon(getClass().getResource("pl.jpg"));
+        this.setIconImage(ic.getImage());
+        
+        
+        
+    }
+      
+      
+      
+      
+      public void backgroundImage()
+      {
+          
+          
+          i = new ImageIcon(getClass().getResource("1.png"));
+          l = new JLabel(i);
+          l.setBounds(0,0,512,243);
+          l.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+          c.add(l);
+          
+          
+          
+      }
+      
+      
+      
+      public void components()
+      {
+          
+         
+          lt = new JLabel();
+          lt.setBounds(109,290,250,60);  
+          c.add(lt);
+          t = new JTextField();
+          t.setBounds(100,290,250,60);
+         // t.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+          t.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+          f = new Font("Arial",Font.BOLD,15);
+          t.setToolTipText("Enter User Name");
+          t.setFont(f);
+          c.add(t);
+          
+          lt2 = new JLabel();
+          lt2.setBounds(109,350,250,60);
+          c.add(lt2);
+          
+          p = new JPasswordField();
+          p.setBounds(100,350,250,60);
+          p.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+          p.setEchoChar('*');
+          p.setToolTipText("Enter Password");
+          f = new Font("Arial",Font.BOLD,15);
+          p.setFont(f);
+          c.add(p);
+          
+          
+     	
+      }
+      
+      
+      
+      
+      public void button()
+    {
+        
+        
+        log = new JButton();
+        log.setBounds(138,200,190,53);
+        im = new ImageIcon(getClass().getResource("log.png"));
+        log = new JButton(im);
+        log.setBounds(138,500,190,47);
+        log.setBackground(Color.GRAY);
+        curs = new Cursor(Cursor.HAND_CURSOR);
+        log.setCursor(curs);
+        c.add(log);
+        
+        log.addActionListener(new ActionListener(){
+            
+            public void actionPerformed(ActionEvent ae)
+            {
+                
+               String name = t.getText();
+                String password = p.getText();
+                
+                if(name.equals("USER")&&password.equals("12345"))
+                {
+                    JOptionPane.showMessageDialog(null,"You are now successfully logged in.");
+                    
+                    FindFlight f = new FindFlight();
+                    f.setVisible(true);
+                    f.setResizable(false);
+                    f.setBounds(400,100,500,500);
+                    
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Sorry, Try again. Check User name and Password.");
+                }
+            }
+            
+            
+        });
+        
+         
+        
+    }
+      
+      
+      
+      
+      public void table()
+      {
+         
+          
+          label = new JLabel("Domestic Flight Schedule for Economic Class");
+          label.setBounds(700,0,600,20);
+          label.setFont(f);
+          label.setForeground(Color.GREEN);
+          c.add(label);
+          
+          
+          
+          table = new JTable(row,col);
+          scroll = new JScrollPane(table);
+          scroll.setBounds(700,40,600,90);
+          table.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+          c.add(scroll);
+          
+          
+          
+          label2 = new JLabel("Domestic Flight Schedule for Business Class");
+          label2.setBounds(700,120,600,100);
+          label2.setFont(f);
+          label2.setForeground(Color.GREEN);
+          c.add(label2);
+          
+          
+          
+          table2 = new JTable(row2,col2);
+          scroll = new JScrollPane(table2);
+          scroll.setBounds(700,200,600,90);
+          table2.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+          c.add(scroll);
+          
+          
+          
+          label3 = new JLabel("International Flight Schedule for Economic class");
+          label3.setBounds(700,275,600,100);
+          label3.setFont(f);
+          label3.setForeground(Color.GREEN);
+          c.add(label3);
+          
+          
+          
+          table3 = new JTable(row3,col3);
+          scroll = new JScrollPane(table3);
+          scroll.setBounds(700,350,600,90);
+          table3.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+          c.add(scroll);
+          
+          
+          
+          label4 = new JLabel("International Flight Schedule for Business Class");
+          label4.setBounds(700,420,600,100);
+          label4.setFont(f);
+          label4.setForeground(Color.GREEN);
+          c.add(label4);
+          
+          
+          
+          table4 = new JTable(row4,col4);
+          scroll = new JScrollPane(table4);
+          scroll.setBounds(700,500,600,100);
+          table4.setBorder(BorderFactory.createLineBorder(Color.CYAN));
+          c.add(scroll);
+          
+          
+          
+      }
+      
+      
+      
+      
+     public static void main(String[]args)
+     {
+         
+         
+        Login frame2 = new Login();
+        frame2.setVisible(true);
+        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+        
+     }
+     
+     
+     
+}

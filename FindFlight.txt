@@ -1,0 +1,128 @@
+//Jannatul Ferdous_1813660642
+
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+
+public class FindFlight extends JFrame{
+    private Container c;
+    private ImageIcon ic;
+    private JLabel l,l2;
+    private Font f, f2;
+    private JButton b,b2;
+    private Cursor cur;
+    
+    FindFlight()
+    {
+        c = this.getContentPane();
+        c.setLayout(null);
+        c.setBackground(Color.WHITE);
+        this.setTitle("Airline Reservation System _ Find Flight");
+        this.setResizable(true);
+        
+        iconImage();
+        
+        l = new JLabel();
+        l.setText("Choose One");
+        l.setBounds(185,20,150,50);
+        f = new Font("Arial",Font.BOLD,22);
+        l.setFont(f);
+        l.setForeground(Color.RED);
+        c.add(l);
+        
+        l2 = new JLabel();
+        l2.setText("-------------------------- OR -------------------------");
+        l2.setBounds(50,200,430,50);
+        f = new Font("Arial",Font.BOLD,22);
+        l2.setFont(f);
+        l2.setForeground(Color.DARK_GRAY);
+        c.add(l2);
+        
+        button();
+        
+    }
+    
+    public void button(){
+        
+        b = new JButton("     Domestic    Flight     ");
+        b.setBounds(50,100,400,50);
+        f2 = new Font("Arial",Font.CENTER_BASELINE,23);
+        b.setFont(f2);
+        b.setForeground(Color.BLACK);
+        b.setBorder(BorderFactory.createLineBorder(Color.PINK));
+        b.setBackground(Color.WHITE);
+        cur = new Cursor(Cursor.HAND_CURSOR);
+        b.setCursor(cur);
+        c.add(b);
+        
+        b.addActionListener(new ActionListener(){
+            
+            public void actionPerformed(ActionEvent ae)
+            {
+                JOptionPane.showMessageDialog(null,"Welcome to Domestic Airlinse");
+                Domestic frame = new Domestic();
+                frame.setVisible(true);
+                frame.setBounds(0,0,1400,800);
+            }
+            
+            
+        });
+        
+        
+        
+        b2 = new JButton("   International    Flight   ");
+        b2.setBounds(50,300,400,50);
+        b2.setFont(f2);
+        b2.setForeground(Color.BLACK);
+        b2.setBorder(BorderFactory.createLineBorder(Color.PINK));
+        b2.setBackground(Color.WHITE);
+        cur = new Cursor(Cursor.HAND_CURSOR);
+        b2.setCursor(cur);
+        c.add(b2);
+        
+         b2.addActionListener(new ActionListener(){
+            
+            public void actionPerformed(ActionEvent ae)
+            {
+                JOptionPane.showMessageDialog(null,"Welcome to International Airlinse");
+                International frame = new International();
+                frame.setVisible(true);
+                frame.setBounds(0,0,1400,800);
+                
+            }
+            
+            
+        });
+    
+}
+    
+     public void iconImage()
+    {
+        ic = new ImageIcon(getClass().getResource("pl.jpg"));
+        this.setIconImage(ic.getImage());
+    }
+    
+    
+    /*public static void main(String[] args) {
+        FindFlight f = new FindFlight();
+        f.setVisible(true);
+        f.setResizable(false);
+        f.setBounds(400,100,500,500);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+    }
+*/
+    
+}

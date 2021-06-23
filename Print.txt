@@ -1,0 +1,67 @@
+//Jannatul Ferdous_1813660642
+
+
+import javax.swing.*;
+import java.awt.*;
+
+
+class Print extends JFrame{
+    
+     private Container c;
+     private ImageIcon icon,i;
+      private JLabel l,l1;
+     
+     private Font f;
+     
+      public Print()
+    {
+         c = this.getContentPane();
+         c.setLayout(null);
+         c.setBackground(Color.white);
+         this.setBounds(50,80,1010,500);
+         this.setTitle("Ticket");
+         this.setResizable(true);
+         
+         l1 = new JLabel();
+         l1.setText("Your Air Ticket is preparing and will be send to your mail. Thank you!");
+         l1.setBounds(100,320,650,200);
+         f = new Font("Arial",Font.PLAIN,20);
+         l1.setForeground(Color.blue);
+         l1.setFont(f);
+         c.add(l1);
+         
+         iconImage();
+         backgroundImage();
+    }
+      
+      public void iconImage()
+    {
+        icon = new ImageIcon(getClass().getResource("im.jpg"));
+        this.setIconImage(icon.getImage());
+    }
+      
+     
+         public void backgroundImage()
+    {
+        
+        
+        i = new ImageIcon(getClass().getResource("tick.jpg"));
+        l = new JLabel(i);
+        l.setBounds(0,0,1000,400);
+        c.add(l);
+        
+        
+        
+    }  
+      
+      
+    /* public static void main(String[]args)
+    {
+        Print frame = new Print();
+        frame.setVisible(true);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    */
+    
+}

@@ -1,0 +1,240 @@
+Tasnova Tabassum Apsara_2011446642
+
+
+
+import javax.swing.JFrame;
+import java.awt.Container;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javafx.scene.layout.Border;
+import javax.swing.JOptionPane;
+
+class registration extends JFrame {
+
+    private Container c;
+    private ImageIcon icon, icon2;
+    private JLabel l, head;
+    private JLabel label, label2, label3, label4, label5, label6, label7, label8;
+    private Font f, f1, f2, ff;
+    private JTextField t1, t2, t4, t5, t6, t7;
+    private JButton b;
+    private JRadioButton male, female;
+    private Cursor cur;
+
+    public registration() {
+        c = this.getContentPane();
+        c.setLayout(null);
+        c.setBackground(Color.white);
+        this.setBounds(200, 100, 500, 500);
+        this.setTitle(Airline Resrvation System _ Customer Registration);
+        this.setResizable(true);
+    }
+
+    public void iconImage() {
+        icon = new ImageIcon(getClass().getResource(im.jpg));
+        this.setIconImage(icon.getImage());
+    }
+
+    public void backgroundImage() {
+        icon2 = new ImageIcon(this.getClass().getResource(imagee.jpg));
+        l = new JLabel(icon2);
+        l.setBounds(400, 0, 1000, 800);
+        c.add(l);
+    }
+
+    public void components() {
+        f = new Font(Arial, Font.BOLD, 16);
+        head = new JLabel();
+        head.setText(Flight Reservation);
+        head.setBounds(10, 20, 150, 50);
+        f1 = new Font(Arial, Font.BOLD, 16);
+        head.setForeground(Color.BLUE);
+        head.setFont(f1);
+        c.add(head);
+
+        label = new JLabel();
+        label.setText(First Name           );
+        label.setBounds(50, 100, 150, 50);
+        label.setFont(f);
+        label.setForeground(Color.red);
+        c.add(label);
+
+        t1 = new JTextField();
+        t1.setBounds(200, 100, 150, 50);
+        t1.setFont(f);
+        t1.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+         t1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+         t1.setToolTipText(First Name);
+        c.add(t1);
+
+        label2 = new JLabel();
+        label2.setText(Last Name           );
+        label2.setBounds(50, 150, 150, 50);
+        label2.setFont(f);
+        label2.setForeground(Color.red);
+        c.add(label2);
+        t2 = new JTextField();
+        t2.setBounds(200, 150, 150, 50);
+        t2.setFont(f);
+        t2.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+        c.add(t2);
+
+        label3 = new JLabel();
+        label3.setText(Gender                 );
+        label3.setBounds(50, 200, 150, 50);
+        label3.setFont(f);
+        label3.setForeground(Color.red);
+
+        c.add(label3);
+        male = new JRadioButton(Male);
+        male.setBounds(200, 200, 70, 50);
+        male.setBackground(Color.white);
+        male.setForeground(Color.GRAY);
+        c.add(male);
+        female = new JRadioButton(Female);
+        female.setBounds(270, 200, 80, 50);
+        female.setBackground(Color.white);
+        female.setForeground(Color.GRAY);
+        c.add(female);
+
+        label4 = new JLabel();
+        label4.setText(Passport ID         );
+        label4.setBounds(50, 250, 150, 50);
+        label4.setFont(f);
+        label4.setForeground(Color.red);
+        c.add(label4);
+        t4 = new JTextField();
+        t4.setBounds(200, 250, 150, 50);
+        t4.setFont(f);
+        t4.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+        c.add(t4);
+
+        label5 = new JLabel();
+        label5.setText(Date of Birth       );
+        label5.setBounds(50, 300, 150, 50);
+        label5.setFont(f);
+        label5.setForeground(Color.red);
+        c.add(label5);
+        t5 = new JTextField();
+        t5.setBounds(200, 300, 150, 50);
+        t5.setFont(f);
+        t5.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+        c.add(t5);
+
+        label6 = new JLabel();
+        label6.setText(Address               );
+        label6.setBounds(50, 350, 150, 50);
+        label6.setFont(f);
+        label6.setForeground(Color.red);
+        c.add(label6);
+        t6 = new JTextField();
+        t6.setBounds(200, 350, 150, 50);
+        t6.setFont(f);
+        t6.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+        c.add(t6);
+
+        label7 = new JLabel();
+        label7.setText(E-mail                );
+        label7.setBounds(50, 400, 150, 50);
+        label7.setFont(f);
+        label7.setForeground(Color.red);
+        c.add(label7);
+        t7 = new JTextField();
+        t7.setBounds(200, 400, 150, 50);
+        t7.setFont(f);
+        t7.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+        c.add(t7);
+
+        label8 = new JLabel();
+        label8.setText(Please, enter your information carefully.);
+        label8.setBounds(40, 600, 320, 50);
+        ff = new Font(Arial, Font.PLAIN, 14);
+        label8.setFont(ff);
+        label8.setForeground(Color.DARK_GRAY);
+        c.add(label8);
+
+    }
+
+    public void button() {
+
+        b = new JButton(Sign Up);
+        b.setBounds(50, 510, 300, 40);
+        f2 = new Font(Arial, Font.BOLD, 18);
+        b.setFont(f2);
+        b.setForeground(Color.white);
+        b.setBackground(Color.ORANGE);
+        cur = new Cursor(Cursor.HAND_CURSOR);
+        b.setCursor(cur);
+        c.add(b);
+
+        b.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent ae) {
+                String name = t1.getText();
+                if(t1.getText().isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null,Please enter your first name!);
+                }
+                else if(t2.getText().isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null,Please enter your last name!);
+                }
+                else if(t4.getText().isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null,Please enter passport id!);
+                }
+                else if(t5.getText().isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null,Please enter date of birth!);
+                }
+                else if(t6.getText().isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null,Please enter address!);
+                }
+                else if(t7.getText().isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null,Please enter mail address!);
+                }
+                
+                else
+                {
+                    JOptionPane.showMessageDialog(null, Welcome, +name);
+                    Login frame2 = new Login();
+                    frame2.setVisible(true);
+                    frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    
+                }
+                
+
+                
+
+            }
+
+        });
+
+    }
+
+    public void Test() {
+        iconImage();
+        backgroundImage();
+        components();
+        button();
+    }
+
+    public static void main(String[] args) {
+        registration frame = new registration();
+        frame.setVisible(true);
+        frame.Test();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+}

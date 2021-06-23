@@ -1,0 +1,441 @@
+//Tasnova Tabassum Apsara_2011446642
+
+
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+
+
+
+public class Domestic extends JFrame{
+    
+    private Container c;
+    private ImageIcon icon,i, i2;
+    private JLabel label, label2, label3, label4, label5, label6, la, lab;
+    private Font font, font2, font3, f2, ff;
+    private JComboBox item, item2, item3;
+    private JTextField text;
+    private JButton b;
+    private Cursor cur;
+    private JLabel l, L1, L2, L3, L4, L5, L6, L7, L8, L9, L10, li, lii, lii2, e;
+    private JComboBox cb, cb2, cb3, cb4, cb5, cbb;
+    
+    
+    
+    
+    public Domestic()
+    {
+        
+        
+        c = this.getContentPane();
+        c.setLayout(null);
+        c.setBackground(Color.white);
+        this.setBounds(0,0,20,10);
+        this.setTitle(" Domestic  Airlinse");
+        iconImage();
+        text();
+        button();
+        image();
+       
+        
+        
+    }
+    
+    
+    
+    public void iconImage()
+    {
+        
+        
+        icon = new ImageIcon(getClass().getResource("iconInt.jpg"));
+        this.setIconImage(icon.getImage());
+        
+        
+    }
+    
+    
+    
+    
+    public void text()
+    {
+        
+        
+        label = new JLabel();
+        label.setText("Flight  Information");
+        label.setBounds(70,2,150,50);
+        font = new Font("Arial",Font.PLAIN,14);
+        label.setForeground(Color.red);
+        label.setFont(font); 
+        c.add(label);
+        
+        
+        
+        label2 = new JLabel();
+        label2.setText("From");
+        label2.setBounds(70,50,150,60);
+        font2 = new Font("Arial",Font.BOLD,15);
+        label2.setForeground(Color.DARK_GRAY);
+        label2.setFont(font2);
+        c.add(label2);
+        
+        
+        
+        String[] s = {"Dhaka"};
+        item = new JComboBox(s);
+        item.setBounds(170,70,150,20);
+        c.add(item);
+        
+        
+        
+        label3 = new JLabel();
+        label3.setText("To");
+        label3.setBounds(70,120,150,60);
+        font2 = new Font("Arial",Font.BOLD,15);
+        label3.setForeground(Color.DARK_GRAY);
+        label3.setFont(font2);
+        c.add(label3);
+        
+        
+        
+        String[] s2 = {"Tangail","Pabna","Jessore","Sylhet","Ishwardi","Rajshahi","Comilla","Barishal","Saidpur","Patuakhali","Noakhali","Thakurgaon","Lalmonirhat","Bogura","Tejgaon","Cox's Bazar"};
+        item2 = new JComboBox(s2);
+        item2.setBounds(170,140,150,20);
+        c.add(item2);
+        
+        
+        
+        label4 = new JLabel();
+        label4.setText("Class");
+        label4.setBounds(70,190,150,60);
+        font2 = new Font("Arial",Font.BOLD,15);
+        label4.setForeground(Color.DARK_GRAY);
+        label4.setFont(font2);
+        c.add(label4);
+        
+        
+        
+        String[] s3 = {"Economy","Business"};
+        item3 = new JComboBox(s3);
+        item3.setBounds(170,210,150,20);
+        c.add(item3);
+        
+        
+        
+        label5 = new JLabel();
+        label5.setText("Flight Date");
+        label5.setBounds(70,260,150,60);
+        font2 = new Font("Arial",Font.BOLD,15);
+        label5.setForeground(Color.DARK_GRAY);
+        label5.setFont(font2);
+        c.add(label5);
+        
+        
+        
+        text = new JTextField();
+        text.setBounds(170,280,150,20);
+        c.add(text);
+        
+        
+        
+        
+        label6 = new JLabel();
+        label6.setText(" (Day/Month/Year)");
+        font3 = new Font("Arial",Font.BOLD,13);
+        label6.setFont(font3);
+        label6.setForeground(Color.red);
+        label6.setBounds(320,279,150,20);
+        c.add(label6);
+        
+        
+        
+        l = new JLabel();
+        l.setText("Passenger  Information");
+        l.setBounds(520,2,150,50);
+        l.setForeground(Color.RED);
+        l.setFont(font);
+        c.add(l);
+        
+        
+        
+        L1 = new JLabel();
+        L1.setText("Adult");
+        L1.setBounds(520,50,150,50);
+        L1.setFont(font2);
+        L1.setForeground(Color.DARK_GRAY);
+        c.add(L1);
+        
+        
+        
+        L2 = new JLabel();
+        L2.setText("(18-64)");
+        L2.setFont(font2);
+        L2.setBounds(565,50,150,50);
+        L2.setForeground(Color.red);
+        c.add(L2);
+        
+        
+        
+        String[] st = {"1","2","3","4","5","6","7","8","9","10"};
+        cb = new JComboBox(st);
+        cb.setBounds(720,65,90,20);
+        c.add(cb);
+        
+        
+        
+        
+        L2 = new JLabel();
+        L2.setText("Child");
+        L2.setBounds(520,120,150,50);
+        L2.setFont(font2);
+        L2.setForeground(Color.DARK_GRAY);
+        c.add(L2);
+        
+        
+        
+        L3 = new JLabel();
+        L3.setText("   (2-11)");
+        L3.setFont(font2);
+        L3.setBounds(550,120,150,50);
+        L3.setForeground(Color.red);
+        c.add(L3);
+        
+        
+        
+        
+        String[] st2 = {"0","1","2","3","4","5"};
+        cb2 = new JComboBox(st2);
+        cb2.setBounds(720,137,90,20);
+        c.add(cb2);
+        
+        
+        
+        L4 = new JLabel();
+        L4.setText("Infant on lap");
+        L4.setBounds(520,190,150,50);
+        L4.setFont(font2);
+        L4.setForeground(Color.DARK_GRAY);
+        c.add(L4);
+        
+        
+        
+        
+        L5 = new JLabel();
+        L5.setText("(under 2)");
+        L5.setFont(font2);
+        L5.setBounds(613,190,150,50);
+        L5.setForeground(Color.red);
+        c.add(L5);
+        
+        
+        
+        String[] st3 = {"0","1","2","3"};
+        cb3 = new JComboBox(st3);
+        cb3.setBounds(720,207,90,20);
+        c.add(cb3);
+        
+        
+        
+        L5 = new JLabel();
+        L5.setText("Youth");
+        L5.setBounds(520,260,150,50);
+        L5.setFont(font2);
+        L5.setForeground(Color.DARK_GRAY);
+        c.add(L5);
+        
+        
+        
+        L6 = new JLabel();
+        L6.setText("(12-17)");
+        L6.setFont(font2);
+        L6.setBounds(567,260,150,50);
+        L6.setForeground(Color.red);
+        c.add(L6);
+        
+        
+        
+        String[] st4 = {"0","1","2","3","4","5","6","7"};
+        cb4 = new JComboBox(st4);
+        cb4.setBounds(720,277,90,20);
+        c.add(cb4);
+        
+        
+        
+        la = new JLabel();
+        la.setText("Senior");
+        la.setBounds(520,340,150,50);
+        la.setFont(font2);
+        la.setForeground(Color.DARK_GRAY);
+        c.add(la);
+        
+        
+        
+        lab = new JLabel();
+        lab.setText(" 65+");
+        lab.setFont(font2);
+        lab.setBounds(567,340,150,50);
+        lab.setForeground(Color.red);
+        c.add(lab);
+        
+        
+        
+        
+        String[] str = {"0","1","2","3","4"};
+        cbb = new JComboBox(str);
+        cbb.setBounds(720,355,90,20);
+        c.add(cbb);
+        
+        
+        
+        
+        L7 = new JLabel();
+        L7.setText("Bag");
+        L7.setBounds(520,413,150,50);
+        L7.setFont(font2);
+        L7.setForeground(Color.DARK_GRAY);
+        c.add(L7);
+        
+        
+        
+        L8 = new JLabel();
+        L8.setText(" (Carry-on)");
+        L8.setFont(font2);
+        L8.setBounds(550,413,150,50);
+        L8.setForeground(Color.red);
+        c.add(L8);
+        
+        
+        
+        
+        String[] st5 = {"0","1","2","3","4","5","6","7"};
+        cb5 = new JComboBox(st5);
+        cb5.setBounds(720,430,90,20);
+        c.add(cb5);
+        
+        
+        
+        L9 = new JLabel();
+        L9.setText("Bag");
+        L9.setBounds(520,490,150,50);
+        L9.setFont(font2);
+        L9.setForeground(Color.DARK_GRAY);
+        c.add(L9);
+        
+        
+        
+        L10 = new JLabel();
+        L10.setText(" (Checked)");
+        L10.setFont(font2);
+        L10.setBounds(550,490,150,50);
+        L10.setForeground(Color.red);
+        c.add(L10);
+        
+        
+        
+        
+        String[] st6 = {"0","1","2","3","4","5","6","7"};
+        cb5 = new JComboBox(st6);
+        cb5.setBounds(720,505,90,20);
+        c.add(cb5);
+        
+        
+        
+    }
+    
+    
+    
+    public void button()
+    {
+       
+        b = new JButton("Search");
+        b.setBounds(80,380,250,40);
+        f2 = new Font("Arial",Font.BOLD,18);
+        b.setFont(f2);
+        b.setForeground(Color.WHITE);
+        b.setBackground(Color.ORANGE);
+        cur = new Cursor(Cursor.HAND_CURSOR);
+        b.setCursor(cur);
+        c.add(b);
+        
+        
+        
+         b.addActionListener(new ActionListener(){
+            
+            public void actionPerformed(ActionEvent ae)
+            {
+                JOptionPane.showMessageDialog(null,"Seats are available. Do you want to book?");
+                Print frame = new Print();
+                frame.setVisible(true);
+                frame.setResizable(false);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                
+            }
+            
+            
+        });
+    }
+    
+    
+    
+    
+    public void image()
+    {
+       
+        
+        lii = new JLabel();
+        lii.setText("Business Class");
+        ff = new Font("Arial",Font.TRUETYPE_FONT,18);
+        lii.setFont(ff);
+        lii.setForeground(Color.PINK);
+        lii.setBounds(900,4,150,50);
+        c.add(lii);
+        
+        
+        
+        
+        i = new ImageIcon(getClass().getResource("db.jpg"));
+        li = new JLabel(i);
+        li.setBounds(900,60,400,250);
+        c.add(li);
+        
+        
+        
+        lii2 = new JLabel();
+        lii2.setText("Economy Class");
+        lii2.setFont(ff);
+        lii2.setForeground(Color.PINK);
+        lii2.setBounds(900,340,150,50);
+        c.add(lii2);
+        
+        
+        
+        i2 = new ImageIcon(getClass().getResource("de.jpg"));
+        e = new JLabel(i2);
+        e.setBounds(900,400,400,250);
+        c.add(e);
+        
+        
+        
+    }
+    
+   /* public static void main(String[] args) {
+        Domestic frame = new Domestic();
+        frame.setVisible(true);
+        frame.setBounds(400,100,500,500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       
+    }*/
+    
+}
+
